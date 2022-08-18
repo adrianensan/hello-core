@@ -87,6 +87,7 @@ public class PersistentThing<Property: PersistenceProperty>: PersistenceSubscrib
     self.persistence = persistence
     self.property = property
     value = Persistence.value(property)
+    persistence.subscribe(self, to: property.key)
   }
   
   public var wrappedValue: Property.Value {
